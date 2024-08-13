@@ -1,0 +1,152 @@
+Server-side Programming :
+
+It is the program that runs on server dealing with the generation of content of web page.
+1) Querying the database
+2) Operations over databases
+3) Access/Write a file on server.
+4) Interact with other servers.
+5) Structure web applications.
+6) Process user input. For example if user input is a text in search box, run a search algorithm on data stored on server and send the results.
+
+Examples :
+The Programming languages for server-side programming are :
+1) PHP
+2) C++
+3) Java and JSP
+4) Python
+5) Ruby on Rails
+
+Refer PHP articles for example server side codes.
+
+Client-side Programming :
+
+It is the program that runs on the client machine (browser) and deals with the user interface/display and any other processing that can happen on client machine like reading/writing cookies.
+
+1) Interact with temporary storage
+2) Make interactive web pages
+3) Interact with local storage
+4) Sending request for data to server
+5) Send request to server
+6) work as an interface between server and user
+
+The Programming languages for client-side programming are :
+1) Javascript
+2) VBScript
+3) HTML
+4) CSS
+5) AJAX
+
+Type Systems:Dynamic Typing, Static Typing & Duck Typing
+
+Dynamic Typing:
+In Dynamic Typing, type checking is performed at runtime. For example, Python is a dynamically typed language. It means that the type of a variable is allowed to change over its lifetime. Other dynamically typed languages are -Perl, Ruby, PHP, Javascript etc.
+Let’s take a Python code example to see if a variable can change type:
+
+  
+## variable a is assigned to a string 
+a ="hello"
+print(type(a)) 
+  
+## variable a is assigned to an integer 
+a = 5
+print(type(a)) 
+This confirms that the type of variable “a” is allowed to change and Python correctly infers the type as it changes.
+
+Let’s take another example of Dynamic Typing in Python :
+
+
+## simple function 
+def add(a, b): 
+    return a + b 
+  
+## calling the function with string 
+print(add('hello', 'world')) 
+  
+## calling the function with integer 
+print(add(2, 4)) 
+In Python, we don’t really have a good idea of what are the types that this function deals with and also what the type of the return value is going to be.
+
+Static Typing:
+Static Typing is opposite to Dynamic Typing. In Static Typing, type checking is performed during compile time. It means that the type of a variable is known at compile time. For some languages, the programmer must specify what type each variable is (e.g C, C++, Java), other languages offer some form of type inference(e.g. Scala, Haskell).
+With Static Typing, variables generally are not allowed to change types.
+Let’s look at a simple example from a statically typed language. Consider the following Java snippet;
+
+String a; 
+a = "Java is good"; 
+The first line declares that the variable “a” is bound to the string type at compile time. In the second line, “a” is assigned a value which is not a string object. For example, if we say, a =5, the compiler would raise an error because of incompatible types.
+
+Duck Typing
+Duck Typing is a concept related to Dynamic Typing, where the type or the class of an object is less important than the method it defines.Using Duck Typing, we do not check types at all. Instead we check for the presence of a given method or attribute.
+The reason behind the name is the duck test: “If it looks like a duck, swims like a duck, and quack like a duck, then it probably is a duck”.
+Let’s take a simple Python code example to understand it clearly:
+
+
+class Duck: 
+    def quack(self): 
+        print("Quack") 
+  
+class Goose: 
+    def quack(self): 
+        print("Quack Quack") 
+  
+class Dog: 
+    def bark(self): 
+        print("I just bark") 
+  
+class ItQuacks: 
+    def __init__(self, animal): 
+        animal.quack() 
+  
+ItQuacks(Duck()) 
+ItQuacks(Goose()) 
+ItQuacks(Dog()) 
+
+
+The classes which have an implementation of “quack” method will be able to call (Duck, Goose objects) but for the “Dog” class which does not provide an implementation of “quack” method, gets a “AttributeError” if we try to pass an object.
+
+--diff bet var and let
+
+
+In JavaScript, var and let are both used to declare variables, but they have some important differences in terms of scope, hoisting, and re-declaration:
+
+1. Scope
+var: Has function scope. A variable declared with var is accessible within the function it is declared in, regardless of block scope (like if or for blocks).
+let: Has block scope. A variable declared with let is only accessible within the block (e.g., {}) in which it is defined.
+javascript
+
+function example() {
+    if (true) {
+        var x = 10;
+        let y = 20;
+    }
+    console.log(x); // 10 (accessible)
+    console.log(y); // ReferenceError (not accessible)
+}
+example();
+
+2. Hoisting
+var: Variables declared with var are hoisted to the top of their scope and initialized with undefined. This means they can be used before their declaration (though the value will be undefined until the assignment).
+let: Variables declared with let are also hoisted but are not initialized. They remain in a "temporal dead zone" from the start of the block until the declaration is encountered, so using them before the declaration results in a ReferenceError.
+javascript
+
+console.log(a); // undefined
+var a = 5;
+
+console.log(b); // ReferenceError
+let b = 5;
+
+3. Re-declaration
+var: Allows re-declaration within the same scope.
+let: Does not allow re-declaration within the same scope.
+javascript
+Copy code
+var c = 10;
+var c = 20; // No error
+
+let d = 10;
+let d = 20; // SyntaxError: Identifier 'd' has already been declared
+Summary:
+Use let when you need block-level scoping and want to avoid issues with hoisting and re-declaration.
+Use var when you need function-level scoping (though let is generally preferred in modern JavaScript for better code predictability).
+
+
