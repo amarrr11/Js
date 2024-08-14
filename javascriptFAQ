@@ -1,0 +1,20 @@
+JavaScript Statements – FAQs
+
+What are JavaScript Statements?
+JavaScript statements are instructions that the browser executes. They are composed of expressions, operators, keywords, 
+and values.
+
+What is a Declaration Statement?
+A declaration statement is used to declare variables. It can be done using var, let, or const.
+
+What is an Expression Statement?
+An expression statement evaluates an expression and ends with a semicolon. For example, assigning a value to a variable or 
+calling a function.
+
+What is a Conditional Statement?
+Conditional statements perform different actions based on different conditions. The primary conditional statements in 
+JavaScript are if, else if, else, and switch.
+
+What are Control Statements in JavaScript?
+Control statements in JavaScript are used to determine the flow of control in a program. They enable conditional execution,
+looping, and branching, allowing the program to make decisions and execute different blocks of code based on various conditions.
